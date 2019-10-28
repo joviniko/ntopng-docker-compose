@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   redis:
@@ -6,12 +6,14 @@ services:
   nprobe:
     build:
       context: .
+    image: docker.pkg.github.com/joviniko/ntopng-docker-compose/ntopng-docker-compose:1.0.0
     command: ['nprobe', '--collector-port', '2055', '--zmq', 'tcp://*:1234']
     ports:
      - "2055:2055/udp"
   ntopng:
     build:
       context: .
+    image: docker.pkg.github.com/joviniko/ntopng-docker-compose/ntopng-docker-compose:1.0.0
     command: ["ntopng", "--redis", "redis", "--interface", "tcp://nprobe:1234", "--local-networks", "192.168.0.0/22"]
     ports:
      - "3000:3000"
