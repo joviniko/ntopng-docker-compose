@@ -24,9 +24,9 @@ docker-compose up -d
 
 ## Installed packages:
 ```
-ntopng                     3.1.170625-3081
-ntopng-data                3.1.170625
-nprobe                     8.1.170625-5792
-pfring                     6.7.0-1303
-pfring-dkms                6.7.0
+ntopng                     3.9.191015
+ntopng-data                3.9.191015
+nprobe                     8.7.191015-6644
+pfring                     7.5.0-2713
+pfring-dkms                7.5.0
 ```
